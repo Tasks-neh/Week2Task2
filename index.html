@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+        <style>
+            table,
+            th,
+            td {
+                border: 1px solid black;
+            }
+        </style>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+</head>
+
+
+<body>
+    <div class="row">
+        <div class="col-md-12">
+            <h5 style='text-align:center; margin-right:10px;'>CRICKET 10</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h5 style='text-align:center; margin-right:10px;'>TEAM 1 SCORE</h5>
+        </div>
+        <div class="col-md-4">
+            <h5 id=timer style='text-align:center;font-size: xx-large; margin-right:10px;'>Timer</h5>
+
+        </div>
+        <div class="col-md-4">
+            <h5 style='text-align:center; margin-right:10px;'>TEAM 2 SCORE</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            
+                <button id="team1-hit" style='text-align:center; margin-right:10px;'>Hit 1</button>
+        
+                
+        </div>
+        <div class="col-md-4">
+            <button id="create-game" style='text-align:center; margin-right:10px;'>Create Game</button>
+
+            
+        </div>
+        <div class="col-md-4">
+            <button id="team2-hit" style='text-align:center; margin-right:10px;'>Hit 2</button>
+    
+            
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5">
+            <h5 style='text-align:center;'>TEAM 1 SCORE BOARD</h5>
+            <table  id="table1" style="width:100%">
+                <tr>
+                    <th>Team1</th>
+                    <th>B1</th>
+                    <th>B2</th>
+                    <th>B3</th>
+                    <th>B4</th>
+                    <th>B5</th>
+                    <th>B6</th>
+                </tr>
+                <tr>
+                    <td>Player 1</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+    
+                </tr>
+                <tr>
+                    <td>Player 2</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+    
+                </tr>
+                <tr>
+                    <td>Player 3</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Player 4</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Player 5</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Player 6</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Player 7</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Player 8</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Player 9</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Player 10</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="col-md-2">
+            <h1> </h1>
+            <h1> </h1>
+            <h5 id="team_name"style='text-align:center;'>MATCH WON BY</h5>
+            <h1> </h1>
+            <h1> </h1>
+            <h1> </h1>
+            <button id="gen"style='text-align:center;'>GENERATE RESULT</button>
+            <h1> </h1>
+            <h1> </h1>
+            <h1> </h1>
+
+            <h5 id="maxplay"style='text-align:center;'>MAN OF THE MATCH</h5>
+        </div>
+
+
+
+
+        <div class="col-md-5">
+            <h5 style='text-align:center;'>TEAM 2 SCORE BOARD</h5>
+            <table id="table2" style="width:100%">
+                <tr>
+                    <th>Team1</th>
+                    <th>B1</th>
+                    <th>B2</th>
+                    <th>B3</th>
+                    <th>B4</th>
+                    <th>B5</th>
+                    <th>B6</th>
+                </tr>
+                <tr>
+                    <td>Player 1</td>
+                    <td id=1></td>
+                    <td id=2></td>
+                    <td id=3></td>
+                    <td id=4></td>
+                    <td id=5></td>
+                    <td id=6></td>
+    
+                </tr>
+                <tr>
+                    <td>Player 2</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+    
+                </tr>
+                <tr>
+                    <td>Player 3</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Player 4</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Player 5</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Player 6</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Player 7</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Player 8</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Player 9</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Player 10</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+    
+    
+
+        
+
+       
+
+
+    <script src="Task2.js"></script> 
+
+</body>
+
+</html>
